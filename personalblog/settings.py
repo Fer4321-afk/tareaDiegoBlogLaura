@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'aboutme',
     'tailwind',
     'theme',
-    'django_browser_reload',
+    #'django_browser_reload',
     'posts',
     'users',
     'comments'
@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_browser_reload.middleware.BrowserReloadMiddleware',
+    #'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'personalblog.urls'

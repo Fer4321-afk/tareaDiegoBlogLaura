@@ -1,17 +1,27 @@
-# DEV STAGE
-version: "3.8"
+# ---- DEV STAGE ----
+# services:
+#   web:
+#     build: .
+#     command: python manage.py runserver 0.0.0.0:8000
+#     ports:
+#       - "8000:8000"
+#     volumes:
+#       - .:/app
+#       - ./static:/app/static
+#       - ./media:/app/media
+#     environment:
+#       - DEBUG=1
+#       - SECRET_KEY=supersecreto
+#       - ALLOWED_HOSTS=*
 
+# ---- PROD STAGE 1 ----
 services:
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn personalblog.wsgi:application --bind 0.0.0.0:8000
     ports:
       - "8000:8000"
-    volumes:
-      - .:/app
-      - ./static:/app/static
-      - ./media:/app/media
     environment:
-      - DEBUG=1
+      - DEBUG=0
       - SECRET_KEY=supersecreto
-      - ALLOWED_HOSTS=*
+      - ALLOWED_HOSTS=localhost,127.0.0.1,*
