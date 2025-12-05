@@ -1,20 +1,17 @@
+# DEV STAGE
+version: "3.8"
+
 services:
-  backend:
+  web:
     build: .
-    env_file:
-      - .env
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
     volumes:
       - .:/app
-    expose:
-      - "8000"
-
-  nginx:
-    image: nginx:1.27-alpine
-    ports:
-      - "8080:80"
-    volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./static:/app/static
       - ./media:/app/media
-    depends_on:
-      - backend
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=supersecreto
+      - ALLOWED_HOSTS=*
