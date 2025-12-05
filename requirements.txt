@@ -1,10 +1,21 @@
-# DEV STAGE
+# ---- DEV STAGE ----
+# Django>=4.2
+# gunicorn
+# django-tailwind
+# django-browser-reload
+# pytz
+# sqlparse
+# asgiref
+# psycopg2-binary
+# Pillow
+
+# ---- PROD STAGE 1 & 2 ----
 Django>=4.2
 gunicorn
 django-tailwind
-django-browser-reload
 pytz
 sqlparse
 asgiref
 psycopg2-binary
 Pillow
+# NO django-browser-reload
