@@ -1,25 +1,10 @@
-# Core Django
+# DEV STAGE
 Django>=4.2
-
-# Gunicorn para correr el servidor en producción o contenedor
 gunicorn
-
-# Tailwind integration para Django
 django-tailwind
-
-# Recarga automática del navegador en desarrollo
 django-browser-reload
-
-# Dependencias comunes que Django podría usar
 pytz
 sqlparse
 asgiref
-
-# Si tu proyecto usa bases de datos específicas, añade los drivers
-# Por ejemplo, PostgreSQL:
 psycopg2-binary
-
-# Si tu proyecto usa MySQL:
-# mysqlclient
-
-# Si tu proyecto usa SQLite no hace falta nada adicional
+Pillow
